@@ -1,0 +1,34 @@
+{
+  "name": "FRC WPILib Codespace",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "jdkDistro": "ms"
+    },
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "password": "frc"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "java.import.gradle.enabled": true,
+        "wpilib.offline": false
+      },
+      "extensions": [
+        "wpilibsuite.vscode-wpilib",
+        "vscjava.vscode-java-pack"
+      ]
+    }
+  },
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "Virtual Desktop",
+      "requireLocalPort": false,
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh"
+}
